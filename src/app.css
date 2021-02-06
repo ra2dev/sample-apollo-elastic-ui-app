@@ -1,0 +1,9 @@
+/* Small overrides */
+#root .euiPage {
+    padding: 50px 100px;
+}
+
+#root .app-search-box {
+    max-width: 700px;
+    width: 100%;
+}
