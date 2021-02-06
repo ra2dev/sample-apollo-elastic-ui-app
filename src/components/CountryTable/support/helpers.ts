@@ -29,6 +29,6 @@ export const extractTableData = <T>(
 
     return {
         items: result,
-        totalItemCount: data?.length ?? 0
+        totalItemCount: filteredItems?.length ?? 0
     }
 }
