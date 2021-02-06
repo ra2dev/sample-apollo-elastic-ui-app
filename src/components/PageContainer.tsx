@@ -24,7 +24,7 @@ export default function PageContainer(props: {children: React.ReactNode}) {
                         <EuiPageHeaderSection>
                             <EuiTitle size='l'>
                                 <h1>
-                                    Demo App Country List{' '}
+                                    Demo App: Country List{' '}
                                     <a href='https://github.com/Romroot/sample-apollo-elastic-ui-app' target='_blank'>
                                         <EuiIcon type='logoGithub' size='xl' color='black' />
                                     </a>
