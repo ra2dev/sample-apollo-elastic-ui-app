@@ -1,6 +1,8 @@
 import {gql} from '@apollo/client'
 import {EuiBasicTableProps} from '@elastic/eui'
 import {SearchFilterConfig} from '@elastic/eui/src/components/search_bar/search_filters'
+// @ts-ignore this library don't has d.ts files, since it demo we skipped adding custom typings
+import Flags from 'country-flag-icons/react/3x2'
 
 export const QUERY_GET_COUNTRIES = gql`
     query GetCountries {
@@ -37,7 +39,15 @@ export const tableColumns: EuiBasicTableProps<Country>['columns'] = [
     {
         field: 'emoji',
         name: 'Country Flag',
-        sortable: true
+        sortable: true,
+        render: (val, g) => {
+            const FlagIcon = Flags[g.code]
+            if(FlagIcon) {
+                return <FlagIcon style={{width: '15px', height: '15px'}} />
+            }
+
+            return val ?? null;
+        }
     },
     {
         field: 'phone',
