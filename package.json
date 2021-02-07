@@ -25,7 +25,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "deploy": "rm -rf ./build && yarn build && netlify deploy -d ./build --prod"
   },
   "eslintConfig": {
     "extends": [

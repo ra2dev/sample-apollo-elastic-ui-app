@@ -36,12 +36,13 @@ export const tableColumns: EuiBasicTableProps<Country>['columns'] = [
     },
     {
         field: 'emoji',
-        name: 'Country Flag'
+        name: 'Country Flag',
+        sortable: true
     },
     {
         field: 'phone',
         name: 'Phone',
-        render: (val: string) => `+${val}`
+        sortable: true
     },
     {
         field: 'continent',

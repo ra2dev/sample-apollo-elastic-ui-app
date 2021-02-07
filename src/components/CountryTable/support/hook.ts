@@ -27,7 +27,7 @@ interface State {
  * @note Since it's demo app - implementation are specific to country table, but it's easy to make it more generic.
  */
 export const useCountryTableState = (res: GetCountriesResponse | undefined = {}): UseCountryTableState => {
-    const countries = res?.countries?.map(e => ({...e, continent: e?.continent?.name}))
+    const countries = res?.countries?.map(e => ({...e, continent: e?.continent?.name, phone: `+${e?.phone}`}))
     const continents: string[] = [...new Set(countries?.map(e => e.continent).filter(Boolean))]
 
 
