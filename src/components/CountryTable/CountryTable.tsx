@@ -1,9 +1,10 @@
-import {EuiBasicTable, EuiCallOut, EuiButton, EuiSpacer, EuiFlexGroup} from '@elastic/eui'
+import {EuiBasicTable, EuiCallOut, EuiButton, EuiSpacer} from '@elastic/eui'
 import {useQuery} from '@apollo/client'
 import {QUERY_GET_COUNTRIES, GetCountriesResponse, Country, tableColumns} from './support/constants'
 import {useCountryTableState} from './support/hook'
 import React from 'react'
 import CountryFilter from './CountryFilter'
+import FilterApollo, {TestAdditionalReRender} from '../../config/apollo/FilterApollo'
 
 export default function CountryTable() {
     const {loading, error, data, refetch} = useQuery<GetCountriesResponse>(QUERY_GET_COUNTRIES)
@@ -27,6 +28,8 @@ export default function CountryTable() {
 
     return (
         <>
+            <FilterApollo />
+            <TestAdditionalReRender />
             <CountryFilter {...searchProps} />
             <EuiSpacer size='l' />
             <EuiBasicTable<Country> columns={tableColumns} loading={loading} {...tableProps} />

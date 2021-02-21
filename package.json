@@ -16,6 +16,7 @@
     "@types/react-dom": "^17.0.0",
     "country-flag-icons": "^1.2.8",
     "graphql": "^15.5.0",
+    "mobx-react": "^7.1.0",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -48,6 +49,7 @@
     ]
   },
   "devDependencies": {
+    "mobx": "^6.1.7",
     "prettier": "^2.2.1"
   }
 }
